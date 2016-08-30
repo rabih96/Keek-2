@@ -1,0 +1,9 @@
+Package: com.rabih96.keek2
+Name: Keek 2
+Depends: mobilesubstrate, ws.hbang.common
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome CC tweak!
+Maintainer: Rabih M.
+Author: Rabih M.
+Section: Tweaks
