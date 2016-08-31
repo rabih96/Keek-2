@@ -20,7 +20,7 @@
 	UIImage * __block largeImage;
 	if ([identifier isEqualToString:@"com.apple.mobilecal"] || [identifier isEqualToString:@"com.apple.mobiletimer"]) {
 		void (^block)() = ^{
-			__block SBApplicationIcon *icon;
+			__block SBApplicationIcon *icon = nil;
 			if ([identifier isEqualToString:@"com.apple.mobilecal"]) {
 				icon = [[NSClassFromString(@"SBCalendarApplicationIcon") alloc] initWithApplication:[[NSClassFromString(@"SBApplicationController") sharedInstance] applicationWithBundleIdentifier:identifier]];
 			}else if ([identifier isEqualToString:@"com.apple.mobiletimer"]) {

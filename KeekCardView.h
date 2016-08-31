@@ -12,6 +12,5 @@
 @property (nonatomic, retain) id application;
 
 - (id)initWithIdentifier:(NSString *)identifier cardViewSize:(CGSize)cardSize;
-- (void)openApplication;
 
 @end

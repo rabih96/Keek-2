@@ -15,6 +15,7 @@ static float iconPositionXForIndex(NSInteger index, CGSize size, NSInteger iconC
         float spacing = (size.width - (kIconMaxSize * iconCount) - (kIconSpacing * 2)) / (iconCount - 1);
         return kIconSpacing + index * (kIconMaxSize + spacing);
     }
+	return 0.0;
 }
 
 static CGRect iconFrameForIndex(NSInteger index, CGSize size, NSInteger iconCount)
@@ -31,6 +32,7 @@ static CGRect iconFrameForIndex(NSInteger index, CGSize size, NSInteger iconCoun
     }else{
     	return CGRectMake(y, x, kIconMaxSize, kIconMaxSize);
     }
+	return CGRectZero;
 }
 
 @implementation KCCIconListView{

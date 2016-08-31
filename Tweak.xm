@@ -54,7 +54,7 @@ int tries;
 BOOL ccShouldReload;
 /////////////////////
 
-static CPDistributedMessagingCenter *c;
+//static CPDistributedMessagingCenter *c;
 static KCCCardListView *cardListView;
 static UIView *contextHostView;
 static UIScrollView *musicScrollView;
@@ -74,7 +74,7 @@ static UIButton *closeButton;
 		SBControlCenterSectionViewController *mediaControlsSection  = MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_mediaControlsSection");
 		SBCCQuickLaunchSectionController 	 *quickLaunchSection 	= MSHookIvar<SBCCQuickLaunchSectionController *>(contentView, "_quickLaunchSection");
 
-		CGSize mediaSectionSize = mediaControlsSection.view.frame.size;
+		//CGSize mediaSectionSize = mediaControlsSection.view.frame.size;
 		CGSize quickLaunchSectionSize = quickLaunchSection.view.frame.size;
 		[mediaControlsSection.view removeFromSuperview];
 		[quickLaunchSection.view removeFromSuperview];
@@ -213,8 +213,8 @@ static UIButton *closeButton;
 
 %new
 -(void)openAppWithIdentifier:(UITapGestureRecognizer *)tap{
-	KCCCardView *cardView = tap.view;
-	KeekIconView *iconView = tap.view;
+	KCCCardView *cardView = (KCCCardView*)tap.view;
+	KeekIconView *iconView = (KeekIconView*)tap.view;
 
 	NSString *identifier;
 
@@ -231,7 +231,7 @@ static UIButton *closeButton;
 
 -(void)openAppViewWithIdentifier:(NSString*)identifier{	
 	SBControlCenterContentView 			 *contentView 			= MSHookIvar<SBControlCenterContentView *>(self, "_contentView");
-	SBControlCenterSectionViewController *mediaControlsSection  = MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_mediaControlsSection");
+	//SBControlCenterSectionViewController *mediaControlsSection  = MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_mediaControlsSection");
 	SBControlCenterSectionViewController *airplaySection 		= MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_airplaySection");
 	SBCCQuickLaunchSectionController 	 *quickLaunchSection 	= MSHookIvar<SBCCQuickLaunchSectionController *>(contentView, "_quickLaunchSection");
 	SBCCSettingsSectionController 		 *settingsSection 		= MSHookIvar<SBCCSettingsSectionController *>(contentView, "_settingsSection");
@@ -306,8 +306,8 @@ static UIButton *closeButton;
 
 %new
 -(void)launchAppWithIdentifier:(UITapGestureRecognizer *)tap{
-	KCCCardView *cardView = tap.view;
-	KeekIconView *iconView = tap.view;
+	KCCCardView *cardView = (KCCCardView*)tap.view;
+	KeekIconView *iconView = (KeekIconView*)tap.view;
 
 	NSString *identifier;
 
@@ -333,7 +333,7 @@ static UIButton *closeButton;
 
 
 	SBControlCenterContentView 			 *contentView 			= MSHookIvar<SBControlCenterContentView *>(self, "_contentView");
-	SBControlCenterSectionViewController *mediaControlsSection  = MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_mediaControlsSection");
+	//SBControlCenterSectionViewController *mediaControlsSection  = MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_mediaControlsSection");
 	SBControlCenterSectionViewController *airplaySection 		= MSHookIvar<SBControlCenterSectionViewController *>(contentView, "_airplaySection");
 	SBCCQuickLaunchSectionController 	 *quickLaunchSection 	= MSHookIvar<SBCCQuickLaunchSectionController *>(contentView, "_quickLaunchSection");
 	SBCCSettingsSectionController 		 *settingsSection 		= MSHookIvar<SBCCSettingsSectionController *>(contentView, "_settingsSection");

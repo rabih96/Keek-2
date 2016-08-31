@@ -127,7 +127,7 @@ extern KNCViewController *ncAppViewController;
 }
 
 -(void)openAppWithIdentifier:(UITapGestureRecognizer *)tap{
-	KeekCardView *kCardView = tap.view.superview;
+	KeekCardView *kCardView = (KeekCardView*)tap.view.superview;
 	NSString *identifier = kCardView.identifier;
 
 	if([[[[UIApplication sharedApplication] _accessibilityFrontMostApplication] bundleIdentifier] isEqualToString:identifier]){
@@ -202,7 +202,7 @@ extern KNCViewController *ncAppViewController;
 }
 
 -(void)longPressTap:(UIGestureRecognizer*)recognizer{
-	KeekCardView *kCardView = recognizer.view;
+	KeekCardView *kCardView = (KeekCardView*)recognizer.view;
 	NSString *identifier = kCardView.identifier;
 	[[NSClassFromString(@"SBUIController") sharedInstance] activateApplication:[[%c(SBApplicationController) sharedInstance] applicationWithBundleIdentifier:identifier]];
 }

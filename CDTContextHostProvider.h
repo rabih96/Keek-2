@@ -11,7 +11,7 @@
 - (UIView *)hostViewForApplication:(id)sbapplication;
 - (UIView *)hostViewForApplicationWithBundleID:(NSString *)bundleID;
 - (NSString *)bundleIDFromHostView:(UIView *)hostView;
-- (void)retrieveHostView:(UIView**)hostView application:(SBApplication*)sbapplication completion:(void(^)(void))completion;
+//- (void)retrieveHostView:(UIView**)hostView application:(SBApplication*)sbapplication completion:(void(^)(void))completion;
 
 - (void)launchSuspendedApplicationWithBundleID:(NSString *)bundleID;
 
